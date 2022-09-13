@@ -4,7 +4,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Amplify from 'aws-amplify';
-import config from '../src/aws-exports';
+import config from './aws-exports';
 import App from '../components/App';
 Amplify.configure(config);
 
@@ -21,6 +21,9 @@ export default function Home() {
         <div>
           <Link href="/signin">
             <h1>SignIn</h1>
+          </Link>
+          <Link href="/notes">
+            <h1>Notes</h1>
           </Link>
         </div>
         
