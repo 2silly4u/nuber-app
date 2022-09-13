@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
 import { API } from 'aws-amplify';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
-import { listNotes } from './graphql/queries';
-import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from './graphql/mutations';
+import { listNotes } from '../src/graphql/queries';
+import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from '../src/graphql/mutations';
 
 const initialFormState = { name: '', description: '' }
 
@@ -34,7 +33,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div>
       <h1>My Notes App</h1>
       <input
         onChange={e => setFormData({ ...formData, 'name': e.target.value})}
@@ -58,9 +57,8 @@ function App() {
           ))
         }
       </div>
-      <AmplifySignOut />
     </div>
   );
 }
 
-export default withAuthenticator(App);
+export default App;
